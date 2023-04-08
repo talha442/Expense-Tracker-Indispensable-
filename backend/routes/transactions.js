@@ -1,7 +1,7 @@
+const { addIncome } = require('../controllers/income');
 const router = require('express').Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello World");
-});
+// Created Endpoint for Income
+router.post('/add-income', addIncome);
 
 module.exports = router;
