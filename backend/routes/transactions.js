@@ -10,7 +10,7 @@ const {
 } = require("../controllers/income");
 const router = require("express").Router();
 
-// Created Endpoint for Income
+// Created Endpoint for Income & Expense
 router
   .post("/add-income", addIncome)
   .get("/get-incomes", getIncomes)
