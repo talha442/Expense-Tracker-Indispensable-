@@ -11,6 +11,7 @@ const {
 const router = require("express").Router();
 
 // Created Endpoint for Income & Expense
+
 router
   .post("/add-income", addIncome)
   .get("/get-incomes", getIncomes)
