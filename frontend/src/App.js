@@ -7,6 +7,7 @@ import { useState, useMemo } from "react";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Income from "./Components/Income/Income";
 import Expenses from "./Components/Expenses/Expenses";
+import { useGlobalContext } from "./context/globalContext";
 
 function App() {
   // use to set active state in navigation component
@@ -17,7 +18,10 @@ function App() {
     return <Orb />;
   }, []);
 
-  // Display Specific Window
+  const global = useGlobalContext();
+  console.log(global);
+
+  // Change to different components
   const displayData = () => {
     switch (active) {
       case 1:
@@ -28,6 +32,8 @@ function App() {
         return <Income />;
       case 4:
         return <Expenses />;
+      default:
+        return <Dashboard />;
     }
   };
 
@@ -52,7 +58,7 @@ const AppStyled = styled.div`
     background: rgba(252, 246, 249, 0.78);
     border: 3px solid #ffffff;
     backdrop-filter: blur(4.5px);
-    border-radius: 32px;
+    border-radius: 10px;
     overflow-x: hidden;
     &::-webkit-scrollbar {
       width: 0;
