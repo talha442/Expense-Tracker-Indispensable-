@@ -18,6 +18,7 @@ function App() {
     return <Orb />;
   }, []);
 
+  // Created Global Context
   const global = useGlobalContext();
   console.log(global);
 

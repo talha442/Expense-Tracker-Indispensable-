@@ -19,7 +19,13 @@ export const GlobalProvider = ({ children }) => {
   };
 
   return (
-    <GlobalContext.Provider value={"hello"}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider
+      value={{
+        addIncome,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
   );
 };
 
