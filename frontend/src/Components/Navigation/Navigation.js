@@ -4,7 +4,7 @@ import avatar from "../../img/avatar.png";
 import { menuItems } from "../../utils/menuItems";
 import { signout } from "../../utils/icons";
 
-function Navigation() {
+function Navigation({ active, setActive }) {
   return (
     <NavStyled>
       <div className="user-con">
@@ -17,7 +17,12 @@ function Navigation() {
       <ul className="menu-items">
         {menuItems.map((item) => {
           return (
-            <li key={item.id}>
+            <li
+              key={item.id}
+              onClick={() => setActive(item.id)}
+              // set active id using useState for navigation
+              className={active === item.id ? "active" : ""}
+            >
               {item.icon}
               <span>{item.title}</span>
             </li>
@@ -72,7 +77,37 @@ const NavStyled = styled.nav`
     flex-direction: column;
     li {
       display: grid;
-      grid-template-column: 40px auto;
+      grid-template-columns: 40px auto;
+      align-items: center;
+      margin: 0.6rem 0;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      color: rgba(34, 34, 96, 0.6);
+      padding-left: 1rem;
+      position: relative;
+      i {
+        color: rgba(34, 34, 96, 0.6);
+        font-size: 1.4rem;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+
+  .active {
+    color: rgba(34, 34, 96, 1) !important;
+    i {
+      color: rgba(34, 34, 96, 1) !important;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: #222260;
+      border-radius: 0 10px 10px 0;
     }
   }
 `;
