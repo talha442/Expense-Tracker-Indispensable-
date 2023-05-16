@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { InnerLayout } from "../../styles/Layouts";
 import { useGlobalContext } from "../../context/globalContext";
 import Form from "../Form/Form";
+import IncomeItem from "../IncomeItem/IncomeItem";
 
 function Income() {
-  const { addIncome } = useGlobalContext();
+  // Destructuring from Global Context
+  const { addIncome, getIncomes, incomes } = useGlobalContext();
+
+  // To Render Incomes
+  useEffect(() => {
+    getIncomes();
+  }, []);
 
   return (
     <IncomeStyled>
@@ -15,7 +22,26 @@ function Income() {
           <div className="form-container">
             <Form />
           </div>
-          <div className="incomes"></div>
+          <div className="incomes">
+            {incomes.map((income) => {
+              const { _id, title, amount, date, category, description } =
+                income;
+              return (
+                <IncomeItem
+                  key={_id}
+                  id={_id}
+                  title={title}
+                  description={description}
+                  amount={amount}
+                  date={date}
+                  // type={type}
+                  category={category}
+                  indicatorColor="var(--color-green)"
+                  // deleteItem={deleteIncome}
+                />
+              );
+            })}
+          </div>
         </div>
       </InnerLayout>
     </IncomeStyled>
