@@ -14,6 +14,16 @@ function IncomeItem({
   indicatorColor,
   type,
 }) {
+  const categoryIcon = () => {
+    switch (category) {
+      case value:
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <IncomeItemStyled>
       <div className="icon"></div>
