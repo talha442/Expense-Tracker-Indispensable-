@@ -7,8 +7,7 @@ import IncomeItem from "../IncomeItem/IncomeItem";
 
 function Income() {
   // Destructuring from Global Context
-  const { addIncome, getIncomes, incomes, deleteIncome, totalIncome } =
-    useGlobalContext();
+  const { getIncomes, incomes, deleteIncome, totalIncome } = useGlobalContext();
 
   // To Render Incomes
   useEffect(() => {
@@ -72,11 +71,11 @@ const IncomeStyled = styled.div`
     padding: 1rem;
     margin: 1rem 0;
     font-size: 2rem;
-    gap: .5rem;
-    span{
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: var(--color-green);
+    gap: 0.5rem;
+    span {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-green);
     }
   }
 `;
