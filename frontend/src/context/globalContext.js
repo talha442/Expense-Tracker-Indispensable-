@@ -17,12 +17,28 @@ export const GlobalProvider = ({ children }) => {
       .catch((err) => {
         setError(err.response.data.message);
       });
+    getIncomes();
   };
 
-  // Get Income
+  // Get Incomes
   const getIncomes = async (income) => {
     const response = await axios.get(`${BASE_URL}get-incomes`);
     setIncomes(response.data);
+  };
+
+  // Delete Income
+  const deleteIncome = async (id) => {
+    const res = await axios.delete(`${BASE_URL}delete-income/${id}`);
+    getIncomes();
+  };
+
+  // Total Income
+  const totalIncome = () => {
+    let totalIncome = 0;
+    incomes.forEach((income) => {
+      totalIncome += income.amount;
+    });
+    return totalIncome;
   };
 
   return (
@@ -31,6 +47,8 @@ export const GlobalProvider = ({ children }) => {
         addIncome,
         getIncomes,
         incomes,
+        deleteIncome,
+        totalIncome,
       }}
     >
       {children}

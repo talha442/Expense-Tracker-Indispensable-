@@ -7,7 +7,8 @@ import IncomeItem from "../IncomeItem/IncomeItem";
 
 function Income() {
   // Destructuring from Global Context
-  const { addIncome, getIncomes, incomes } = useGlobalContext();
+  const { addIncome, getIncomes, incomes, deleteIncome, totalIncome } =
+    useGlobalContext();
 
   // To Render Incomes
   useEffect(() => {
@@ -18,6 +19,9 @@ function Income() {
     <IncomeStyled>
       <InnerLayout>
         <h1>Incomes</h1>
+        <h2 className="total-income">
+          Total Income: <span>${totalIncome()}</span>
+        </h2>
         <div className="income-content">
           <div className="form-container">
             <Form />
@@ -34,10 +38,9 @@ function Income() {
                   description={description}
                   amount={amount}
                   date={date}
-                  // type={type}
                   category={category}
                   indicatorColor="var(--color-green)"
-                  // deleteItem={deleteIncome}
+                  deleteItem={deleteIncome}
                 />
               );
             })}
@@ -56,6 +59,24 @@ const IncomeStyled = styled.div`
     gap: 2rem;
     .incomes {
       flex: 1;
+    }
+  }
+  .total-income {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: "var(--color-accent";
+    border: 2px solid #ffffff;
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 2rem;
+    gap: .5rem;
+    span{
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--color-green);
     }
   }
 `;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-    const ExpenseSchema = new mongoose.Schema(
+const ExpenseSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -16,7 +16,7 @@ const mongoose = require("mongoose");
     },
     type: {
       type: String,
-      default: "income",
+      default: "expense",
     },
     date: {
       type: Date,
