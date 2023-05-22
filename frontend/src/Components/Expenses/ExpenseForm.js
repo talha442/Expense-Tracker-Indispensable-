@@ -52,7 +52,7 @@ function ExpenseForm() {
           type="text"
           value={amount}
           name={"amount"}
-          placeholder="Salary Amount"
+          placeholder="Expense Amount"
           onChange={handleInput("amount")}
         />
       </div>
