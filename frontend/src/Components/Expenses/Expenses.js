@@ -16,18 +16,17 @@ function Expenses() {
     <ExpenseStyled>
       <InnerLayout>
         <h1>Expenses</h1>
-        <h2 className="total-income">
+        <h2 className="total-expense">
           Total Expense: <span>${totalExpenses()}</span>
         </h2>
-        <div className="income-content">
+        <div className="expense-content">
           <div className="form-container">
             <ExpenseForm />
           </div>
-          <div className="incomes">
-            {expenses.map((income) => {
+          <div className="expenses">
+            {expenses.map((expense) => {
               const { _id, title, amount, date, category, description, type } =
-                income;
-              console.log(income);
+                expense;
               return (
                 <IncomeItem
                   key={_id}
@@ -53,11 +52,18 @@ function Expenses() {
 const ExpenseStyled = styled.div`
   display: flex;
   overflow: auto;
-  .total-income {
+  .expense-content {
+    display: flex;
+    gap: 2rem;
+    .expenses {
+      flex: 1;
+    }
+  }
+  .total-expense {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fcf6f9;
+    background: "var(--color-accent";
     border: 2px solid #ffffff;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     border-radius: 20px;
@@ -69,13 +75,6 @@ const ExpenseStyled = styled.div`
       font-size: 2.5rem;
       font-weight: 800;
       color: var(--color-green);
-    }
-  }
-  .income-content {
-    display: flex;
-    gap: 2rem;
-    .incomes {
-      flex: 1;
     }
   }
 `;
