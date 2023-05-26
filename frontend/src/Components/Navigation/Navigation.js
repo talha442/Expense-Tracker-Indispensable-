@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import avatar from "../../img/avatar.png";
 import { menuItems } from "../../utils/menuItems";
-import { signout } from "../../utils/icons";
 
 function Navigation({ active, setActive }) {
   return (
@@ -10,7 +9,7 @@ function Navigation({ active, setActive }) {
       <div className="user-con">
         <img src={avatar} alt="" />
         <div className="text">
-          <h2>Talha</h2>
+          <h2>Mike</h2>
           <p>Your Money</p>
         </div>
       </div>
@@ -20,7 +19,6 @@ function Navigation({ active, setActive }) {
             <li
               key={item.id}
               onClick={() => setActive(item.id)}
-              // set active id using useState for navigation
               className={active === item.id ? "active" : ""}
             >
               {item.icon}
@@ -29,52 +27,62 @@ function Navigation({ active, setActive }) {
           );
         })}
       </ul>
-      <div className="bottom-nav">
-        <li>{signout} Sign Out</li>
-      </div>
     </NavStyled>
   );
 }
 
 const NavStyled = styled.nav`
   padding: 2rem 1.5rem;
-  width: 374px;
+  width: 100%;
+  max-width: 374px;
   height: 100%;
   background: rgba(252, 246, 249, 0.78);
-  border: 3px solid white;
+  border: 3px solid #ffffff;
   backdrop-filter: blur(4.5px);
-  border-radius: 10px;
+  border-radius: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    max-width: 100%;
+    padding: 1rem;
+    border-radius: 0;
+  }
+
   .user-con {
     height: 100px;
     display: flex;
     align-items: center;
     gap: 1rem;
+
     img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       object-fit: cover;
       background: #fcf6f9;
-      border: 2px solid #fffff;
+      border: 2px solid #ffffff;
       padding: 0.2rem;
-      bax-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
+      box-shadow: 0px 1px 17px rgba(0, 0, 0, 0.06);
     }
+
     h2 {
       color: rgba(34, 34, 96, 1);
     }
+
     p {
       color: rgba(34, 34, 96, 0.6);
     }
   }
 
   .menu-items {
-    display: flex;
     flex: 1;
+    display: flex;
     flex-direction: column;
+
     li {
       display: grid;
       grid-template-columns: 40px auto;
@@ -86,6 +94,7 @@ const NavStyled = styled.nav`
       color: rgba(34, 34, 96, 0.6);
       padding-left: 1rem;
       position: relative;
+
       i {
         color: rgba(34, 34, 96, 0.6);
         font-size: 1.4rem;
@@ -96,9 +105,11 @@ const NavStyled = styled.nav`
 
   .active {
     color: rgba(34, 34, 96, 1) !important;
+
     i {
       color: rgba(34, 34, 96, 1) !important;
     }
+
     &::before {
       content: "";
       position: absolute;

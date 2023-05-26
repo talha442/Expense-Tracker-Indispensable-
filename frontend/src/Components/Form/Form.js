@@ -16,11 +16,9 @@ function Form() {
     description: "",
   });
 
-  // Destructuring values from input state
   const { title, amount, date, category, description } = inputState;
 
   const handleInput = (name) => (e) => {
-    // Previous values from the state (Spread/Rest Operator)
     setInputState({ ...inputState, [name]: e.target.value });
   };
 
@@ -135,7 +133,6 @@ const FormStyled = styled.form`
       color: rgba(34, 34, 96, 0.4);
     }
   }
-
   .input-control {
     input {
       width: 100%;
@@ -159,6 +156,22 @@ const FormStyled = styled.form`
       box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
       &:hover {
         background: var(--color-green) !important;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .input-control {
+      input {
+        padding: 0.3rem 0.6rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .input-control {
+      input {
+        padding: 0.2rem 0.4rem;
       }
     }
   }
