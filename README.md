@@ -113,7 +113,11 @@ cd backend
 npm install
 ```
 
-3. Start the development server
+3. Connect MongoDb Atlas:
+   Create Cluster
+   Change url in .env File
+
+4. Start the development server
 
 ```bash
 npm start
