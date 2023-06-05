@@ -138,6 +138,8 @@ Icons used in the application are sourced from Font Awesome.
 ## Screenshots
 
 ![Screenshot](https://github.com/talha442/Expense-Tracker-Indispensable-/blob/master/frontend/src/img/screenshot-1.JPG)
+![Screenshot](https://github.com/talha442/Expense-Tracker-Indispensable-/blob/master/frontend/src/img/screenshot-2.JPG)
+![Screenshot](https://github.com/talha442/Expense-Tracker-Indispensable-/blob/master/frontend/src/img/screenshot-3.JPG)
 
 ## Built With
 
