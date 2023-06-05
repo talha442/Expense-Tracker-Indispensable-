@@ -136,8 +136,7 @@ This project is licensed under the MIT License.
 Icons used in the application are sourced from Font Awesome.
 
 ## Screenshots
-
-<img src="./img/screenshot-1.jpg" alt="Screenshot 1">
+https://github.com/github/{repository}/blob/img/screenshot-1.jpg
 
 ## Built With
 
