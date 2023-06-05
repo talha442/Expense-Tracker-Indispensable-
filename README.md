@@ -136,7 +136,8 @@ This project is licensed under the MIT License.
 Icons used in the application are sourced from Font Awesome.
 
 ## Screenshots
-https://github.com/github/{repository}/blob/img/screenshot-1.jpg
+
+![Screenshot](https://github.com/talha442/Expense-Tracker-Indispensable-/blob/master/frontend/src/img/screenshot-1.JPG)
 
 ## Built With
 
