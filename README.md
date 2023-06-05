@@ -123,6 +123,22 @@ npm install
 npm start
 ```
 
+## Contributing
+
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+Icons used in the application are sourced from Font Awesome.
+
+## Screenshots
+
+<img src="./img/screenshot-1.jpg" alt="Screenshot 1">
+
 ## Built With
 
 - [Node.js](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
