@@ -12,6 +12,7 @@ function Expenses() {
   useEffect(() => {
     getExpenses();
   }, []);
+
   return (
     <ExpenseStyled>
       <InnerLayout>
@@ -52,18 +53,35 @@ function Expenses() {
 const ExpenseStyled = styled.div`
   display: flex;
   overflow: auto;
+
   .expense-content {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .form-container {
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 40%;
+      }
+    }
+
     .expenses {
       flex: 1;
     }
   }
+
   .total-expense {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: "var(--color-accent";
     border: 2px solid #ffffff;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     border-radius: 20px;
@@ -71,6 +89,7 @@ const ExpenseStyled = styled.div`
     margin: 1rem 0;
     font-size: 2rem;
     gap: 0.5rem;
+
     span {
       font-size: 2.5rem;
       font-weight: 800;
