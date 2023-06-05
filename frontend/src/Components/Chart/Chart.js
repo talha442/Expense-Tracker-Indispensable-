@@ -13,7 +13,7 @@ import {
 
 import { Line } from "react-chartjs-2";
 import styled from "styled-components";
-import { useGlobalContext } from "../../context/globalContext";
+import { useGlobalContext } from "../../context/globalContext.js";
 import { dateFormat } from "../../utils/dateFormat";
 
 ChartJs.register(
