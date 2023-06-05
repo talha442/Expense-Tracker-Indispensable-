@@ -116,7 +116,7 @@ function Form() {
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   input,
   textarea,
   select {

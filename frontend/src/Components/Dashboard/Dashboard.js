@@ -88,29 +88,26 @@ const DashboardStyled = styled.div`
 
     .chart-con {
       flex: 1;
-      height: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
 
       .amount-con {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         margin-top: 2rem;
 
-        @media (min-width: 768px) {
-          display: grid;
-          grid-template-columns: auto auto auto auto;
-        }
-
         .stat {
-          margin: 5px;
           background: #fcf6f9;
           border: 2px solid #ffffff;
           box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
           border-radius: 20px;
           padding: 1rem;
-          display: grid;
+          display: flex;
           justify-content: center;
           align-items: center;
-          grid-template-columns: max-content;
+          flex-direction: column;
 
           h2 {
             font-size: 1.6rem;
