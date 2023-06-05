@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const useWindowSize = () => {
   // Set Screen Size
-  const [size, setSize] = useState([0, 0]);
+  const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
 
   // Whenever Screen Size changes updates the size
   useEffect(() => {

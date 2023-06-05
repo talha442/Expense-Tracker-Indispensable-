@@ -56,17 +56,10 @@ const IncomeStyled = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
   .total-income {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--color-accent);
     border: 2px solid #ffffff;
     box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
     border-radius: 20px;

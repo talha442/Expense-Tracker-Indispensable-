@@ -88,7 +88,7 @@ const DashboardStyled = styled.div`
 
     .chart-con {
       flex: 1;
-      height: 400px;
+      height: 320px;
 
       .amount-con {
         display: grid;
