@@ -95,8 +95,7 @@ const DashboardStyled = styled.div`
       .amount-con {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        margin-top: 2rem;
+        gap: 0.2rem;
 
         .stat {
           background: #fcf6f9;
