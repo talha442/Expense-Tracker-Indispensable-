@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import ExpenseForm from "./ExpenseForm";
+import Form from "./Form";
 import { useGlobalContext } from "../../context/globalContext";
 import "@testing-library/jest-dom/extend-expect";
 
@@ -8,24 +8,24 @@ jest.mock("../../context/globalContext", () => ({
   useGlobalContext: jest.fn(),
 }));
 
-describe("ExpenseForm", () => {
+describe("Form", () => {
   test("renders form fields correctly", () => {
-    const mockAddExpense = jest.fn();
+    const mockAddIncome = jest.fn();
     const mockSetError = jest.fn();
 
     useGlobalContext.mockReturnValue({
-      addExpense: mockAddExpense,
+      addIncome: mockAddIncome,
       error: "",
       setError: mockSetError,
     });
 
-    render(<ExpenseForm />);
+    render(<Form />);
 
     // Check if all input fields are rendered correctly
-    const titleInput = screen.getByPlaceholderText("Expense Title");
+    const titleInput = screen.getByPlaceholderText("Salary Title");
     expect(titleInput).toBeInTheDocument();
 
-    const amountInput = screen.getByPlaceholderText("Expense Amount");
+    const amountInput = screen.getByPlaceholderText("Salary Amount");
     expect(amountInput).toBeInTheDocument();
 
     const dateInput = screen.getByPlaceholderText("Enter a Date");
@@ -36,25 +36,25 @@ describe("ExpenseForm", () => {
   });
 
   test("handles input changes correctly", () => {
-    const mockAddExpense = jest.fn();
+    const mockAddIncome = jest.fn();
     const mockSetError = jest.fn();
 
     useGlobalContext.mockReturnValue({
-      addExpense: mockAddExpense,
+      addIncome: mockAddIncome,
       error: "",
       setError: mockSetError,
     });
 
-    render(<ExpenseForm />);
+    render(<Form />);
 
     // Simulate user input
-    const titleInput = screen.getByPlaceholderText("Expense Title");
-    fireEvent.change(titleInput, { target: { value: "Expense 1" } });
-    expect(titleInput.value).toBe("Expense 1");
+    const titleInput = screen.getByPlaceholderText("Salary Title");
+    fireEvent.change(titleInput, { target: { value: "Salary 1" } });
+    expect(titleInput.value).toBe("Salary 1");
 
-    const amountInput = screen.getByPlaceholderText("Expense Amount");
-    fireEvent.change(amountInput, { target: { value: "50" } });
-    expect(amountInput.value).toBe("50");
+    const amountInput = screen.getByPlaceholderText("Salary Amount");
+    fireEvent.change(amountInput, { target: { value: "1000" } });
+    expect(amountInput.value).toBe("1000");
 
     const dateInput = screen.getByPlaceholderText("Enter a Date");
     fireEvent.change(dateInput, { target: { value: "2023/06/05" } });
@@ -66,29 +66,26 @@ describe("ExpenseForm", () => {
   });
 
   test("handles form submission correctly", () => {
-    const mockAddExpense = jest.fn();
+    const mockAddIncome = jest.fn();
     const mockSetError = jest.fn();
 
     useGlobalContext.mockReturnValue({
-      addExpense: mockAddExpense,
+      addIncome: mockAddIncome,
       error: "",
       setError: mockSetError,
     });
 
-    render(<ExpenseForm />);
+    render(<Form />);
 
     // Check if input fields are cleared after submission
-    const titleInput = screen.getByPlaceholderText("Expense Title");
+    const titleInput = screen.getByPlaceholderText("Salary Title");
     expect(titleInput.value).toBe("");
 
-    const amountInput = screen.getByPlaceholderText("Expense Amount");
+    const amountInput = screen.getByPlaceholderText("Salary Amount");
     expect(amountInput.value).toBe("");
 
     const dateInput = screen.getByPlaceholderText("Enter a Date");
     expect(dateInput.value).toBe("");
-
-    const categorySelect = screen.getByDisplayValue("Select Option");
-    expect(categorySelect.value).toBe("");
 
     const descriptionTextarea = screen.getByPlaceholderText("Add a Reference");
     expect(descriptionTextarea.value).toBe("");
