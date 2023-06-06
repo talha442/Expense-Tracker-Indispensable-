@@ -40,6 +40,7 @@ function Form() {
       {error && <p className="error">{error}</p>}
       <div className="input-control">
         <input
+          maxLength={50}
           type="text"
           value={title}
           name={"title"}

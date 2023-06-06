@@ -18,12 +18,14 @@ exports.addExpense = async (req, res) => {
       return res.status(400).json({ message: "All field are required" });
     }
     if (amount <= 0 || amount === "number") {
-      return res.status(400).json({ message: "Amount must be a number" });
+      return res
+        .status(400)
+        .json({ message: "Amount must be a positive number" });
     }
     await expense.save();
     res.status(200).json({ message: "Expense added" });
   } catch (error) {
-    return res.status(500).json({ message: "Internal Server Error" });
+    return res.status(500).json({ message: "Fill Correct Information" });
   }
 
   console.log(expense);
