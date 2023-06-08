@@ -141,6 +141,10 @@ Icons used in the application are sourced from Font Awesome.
 ![Screenshot](https://github.com/talha442/Expense-Tracker-Indispensable-/blob/master/frontend/src/img/screenshot-2.JPG)
 ![Screenshot](https://github.com/talha442/Expense-Tracker-Indispensable-/blob/master/frontend/src/img/screenshot-3.JPG)
 
+## Figma Design
+
+https://www.figma.com/file/1pYHk1SvCJTRuml15XsBTT/AR-Based-Ecommerce-App-(Copy)?type=design&node-id=0%3A1&t=qJZmViYRRwApfOX8-1
+
 ## Built With
 
 - [Node.js](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
